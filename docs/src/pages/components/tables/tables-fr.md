@@ -17,19 +17,19 @@ Tables can include:
 
 Lorsque des outils sont inclus, ils doivent être placés directement au-dessus ou au-dessous de la table.
 
-## Basic table
+## Structure
 
 Un exemple simple et sans fioritures.
 
-{{"demo": "pages/components/tables/BasicTable.js", "bg": true}}
+Une table de données contient en haut une ligne d’en-tête qui répertorie les noms de colonne, suivis de lignes pour les données.
 
-## Dense table
+## Tableau simple
 
-Un exemple simple de tableau dense sans fioritures.
+Des cases à cocher doivent accompagner chaque ligne si l'utilisateur doit sélectionner ou manipuler des données.
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}}
 
-## Sorting & selecting
+## Tableau dense
 
 Cet exemple illustre l'utilisation de `Checkbox` et des lignes cliquables pour la sélection, avec une `Toolbar` personnalisée. Il utilise le composant `TableSortLabel` pour aider à styliser les en-têtes de colonne.
 
@@ -37,7 +37,7 @@ La table a reçu une largeur fixe pour illustrer le défilement horizontal. Afin
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}}
 
-## Data table
+## Tri & Sélection
 
 The `Table` component has a close mapping to the native `<table>` elements. This constraint makes building rich data tables challenging.
 
@@ -83,13 +83,13 @@ An example of a table with expandable rows, revealing more information. It utili
 
 {{"demo": "pages/components/tables/CollapsibleTable.js", "bg": true}}
 
-## Spanning table
+## Spanning Table
 
 Un exemple simple avec des colonnes couvrant & lignes.
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}}
 
-## Virtualized table
+## Table virtualisée
 
 Dans l'exemple suivant, nous montrons comment utiliser [react-virtualized](https://github.com/bvaughn/react-virtualized) avec le composant `Table`. Il affiche 200 lignes et peut facilement gérer plus. La virtualisation aide à résoudre les problèmes de performances.
 
