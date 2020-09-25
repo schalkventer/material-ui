@@ -60,7 +60,7 @@ Snackbars should appear above FABs (on mobile).
 
 ### Изменение анимации
 
-[Увеличение](/components/transitions/#grow)  - это анимация, которая используется по умолчанию, но вы можете использовать другую анимацию.
+[Увеличение](/components/transitions/#grow) - это анимация, которая используется по умолчанию, но вы можете использовать другую анимацию.
 
 {{"demo": "pages/components/snackbars/TransitionsSnackbar.js"}}
 
