@@ -17,19 +17,19 @@ Tables can include:
 
 ツールを含めるときは、ツールをテーブルの真上または真下に配置します。
 
-## Basic table
+## Structure
 
 飾り気のないシンプルな例です。
 
-{{"demo": "pages/components/tables/BasicTable.js", "bg": true}}
+Data tableの上部には、列名をリストするヘッダー行があり、その後にデータ用の行が続きます。
 
-## Dense table
+## Simple Table
 
-簡単な例ではの緻密なテーブル詳細
+ユーザーがデータを選択または操作する必要がある場合は、チェックボックスを各行に付ける必要があります。
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}}
 
-## Sorting & selecting
+## Dense Table
 
 An example of a table with expandable rows, revealing more information. It utilizes the [`Collapse`](/api/collapse/) component.
 
@@ -37,7 +37,7 @@ An example of a table with expandable rows, revealing more information. It utili
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}}
 
-## Data table
+## Sorting & Selecting
 
 The `Table` component has a close mapping to the native `<table>` elements. This constraint makes building rich data tables challenging.
 
@@ -83,15 +83,15 @@ An example of a table with expandable rows, revealing more information. It utili
 
 {{"demo": "pages/components/tables/CollapsibleTable.js", "bg": true}}
 
-## Spanning table
+## Spanning Table
 
 行 & 列にまたがる単純な例です。
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}}
 
-## Virtualized table
+## Virtualized Table
 
-次の例では、 `Table` コンポーネントで [react-virtualized](https://github.com/bvaughn/react-virtualized) を使用する方法を示します。 これは200行をレンダリングし、より多くを簡単に処理できます。 仮想化はパフォーマンスの問題に役立ちます。 これは200行をレンダリングし、より多くを簡単に処理できます。 仮想化はパフォーマンスの問題に役立ちます。 これは200行をレンダリングし、より多くを簡単に処理できます。 仮想化はパフォーマンスの問題に役立ちます。
+次の例では、 `Table` コンポーネントで [react-virtualized](https://github.com/bvaughn/react-virtualized) を使用する方法を示します。 これは200行をレンダリングし、より多くを簡単に処理できます。 仮想化はパフォーマンスの問題に役立ちます。
 
 {{"demo": "pages/components/tables/ReactVirtualizedTable.js", "bg": true}}
 
