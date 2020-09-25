@@ -17,19 +17,19 @@ components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead,
 
 当在引入工具时，我们应将它们直接放在表格的上方或下方。
 
-## 基础表格
+## 表格的结构
 
 一个没有多余装饰的简单例子
 
-{{"demo": "pages/components/tables/BasicTable.js", "bg": true}} 
+一个数据表格的顶部是标题行，并展示各列的名称，而后续的各行则是表格的数据。
 
-## 紧凑型表格
+## 简单的表格
 
 这是一个简单紧凑型表格，并且没有多余的装饰。
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}} 
 
-## 排序 & 选择
+## 紧凑的表格
 
 此示例演示了在表格内使用了 ` 选择框组件（Checkbox）` 以及单击选择行，而且这个表格带有一个自定义的 `工具条组件（Toolbar）`。 它也展示了如何使用 `TableSortLabel` 组件来给列标题添加样式。
 
@@ -37,7 +37,7 @@ components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead,
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}} 
 
-## 数据表格
+## 排序 & 筛选
 
 `Table` 组件与原生 `<table>` 元素有密切的映射。 这种限制条件导致构建丰富的数据表格会变得很有挑战性。
 
@@ -89,7 +89,7 @@ components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead,
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}} 
 
-## 虚拟表格（Virtualized table）
+## 大型列表渲染（Virtualized Table）
 
 以下例子展示了将 [react-virtualized](https://github.com/bvaughn/react-virtualized) 与 `Table` 组件一起使用的方法。 它渲染了200多行，并且可以轻松的延展到更多行。 可视化优化了整体的性能。
 
