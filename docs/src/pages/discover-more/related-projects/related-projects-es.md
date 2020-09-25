@@ -33,13 +33,6 @@ Esta es una colección de proyectos de terceros que amplían Material-UI.
 
 - [@mui-treasury/layout](https://mui-treasury.com/layout): Componentes para manejar el diseño general de una página. Puede encontrar un par de ejemplos, por ejemplo, [un clon de reactjs.org](https://mui-treasury.com/layout/clones/reactjs).
 
-### Table (Tabla)
-
-- [material-table](https://github.com/mbrn/material-table): Una tabla de datos simple y potente para React basada en la tabla de Material-UI con algunas características adicionales. Soporta muchos casos de uso diferentes (editable, filtro, agrupación, ordenación, selección, i18n, datos de árbol y más).
-- [dx-react-grid-material-ui](https://devexpress.github.io/devextreme-reactive/react/grid/): A data grid for Material-UI with paging, sorting, filtering, grouping and editing features ([paid license](https://js.devexpress.com/licensing/)).
-- [mui-datatables](https://github.com/gregnb/mui-datatables): Responsive data tables for Material-UI with filtering, sorting, search and more.
-- [tubular-react](https://github.com/unosquare/tubular-react): A Material-UI table with local or remote data-source. Featuring filtering, sorting, free-text search, export to CSV locally, and aggregations.
-
 ### Notificación
 
 - [notistack](https://github.com/iamhosseindhv/notistack): Hace que sea fácil mostrar notificaciones (para que no tenga que lidiar con el estado abierto/cerrado de ellas).
@@ -63,7 +56,7 @@ Esta es una colección de proyectos de terceros que amplían Material-UI.
 
 - [material-ui-image](https://mui.wertarbyte.com/#material-ui-image): Las imágenes son feas hasta que estén cargadas. ¡Materialízalo con material image! Se desvanecerá como lo sugiere el patrón de carga de material image.
 
-### Paginación
+### Pagination
 
 - [material-ui-plan-pagination](https://github.com/szmslab/material-ui-flat-pagination): Un componente de paginación de diseño plano para Material-UI.
 
