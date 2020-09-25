@@ -46,6 +46,30 @@ Support for non-ref-forwarding class components in the `component` prop or as an
 
 ### Theme
 
+- Breakpoints are now treated as values instead of ranges. The behavior of `down(key)` was changed to define media query less than the value defined with the corresponding breakpoint (exclusive). The `between(start, end)` was also updated to define media query for the values between the actual values of start (inclusive) and end (exclusive). When using the `down()` breakpoints utility you need to update the breakpoint key by one step up. When using the `between(start, end)` the end breakpoint should also be updated by one step up. The same should be done when using the `Hidden` component. Find examples of the changes required defined below:
+
+```diff
+-theme.breakpoints.down('sm') // '@media (max-width:959.95px)' - [0, sm + 1) => [0, md)
++theme.breakpoints.down('md') // '@media (max-width:959.95px)' - [0, md)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'md') // '@media (min-width:600px) and (max-width:1279.95px)' - [sm, md + 1) => [0, lg)
++theme.breakpoints.between('sm', 'lg') // '@media (min-width:600px) and (max-width:1279.95px)' - [0, lg)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'xl') // '@media (min-width:600px)'
++theme.breakpoints.up('sm') // '@media (min-width:600px)'
+```
+
+```diff
+-<Hidden smDown>{...}</Hidden> // '@media (min-width:600px)'
++<Hidden mdDown>{...}</Hidden> // '@media (min-width:600px)'
+```
+
+#### Upgrade helper
+
 For a smoother transition, the `adaptV4Theme` helper allows you to iteratively upgrade to the new theme structure.
 
 ```diff
@@ -58,6 +82,8 @@ For a smoother transition, the `adaptV4Theme` helper allows you to iteratively u
 -});
 +}));
 ```
+
+The following changes are supported by the adapter.
 
 #### Changes
 
@@ -118,17 +144,26 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 - The components' definition inside the theme were restructure under the `components` key, to allow people easier discoverability about the definitions regarding one component.
 
+- The `theme.palette.type` was renamed to `theme.palette.mode`, to better follow the "dark mode" term that is usually used for describing this feature.
+
+```diff
+import { createMuiTheme } from '@material-ui/core/styles';
+
+-const theme = createMuitheme({palette: { type: 'dark' }}),
++const theme = createMuitheme({palette: { mode: 'dark' }}),
+```
+
 1. `eigenschaften`
 
 ```diff
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuitheme({
--  props: {
--    MuiButton: {
--      disableRipple: true,
--    },
--  },
+- props: {
+- MuiButton: {
+- disableRipple: true,
+- },
+- },
 +  components: {
 +    MuiButton: {
 +      defaultProps: {
@@ -145,11 +180,11 @@ const theme = createMuitheme({
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuitheme({
--  overrides: {
--    MuiButton: {
--      root: { padding: 0 },
--    },
--  },
+- overrides: {
+- MuiButton: {
+- root: { padding: 0 },
+- },
+- },
 +  components: {
 +    MuiButton: {
 +      styleOverrides: {
@@ -159,6 +194,17 @@ const theme = createMuitheme({
 +  },
 });
 ```
+
+### Hinweis
+
+- Move the component from the lab to the core. The component is now stable.
+
+  ```diff
+  -import Alert from '@material-ui/lab/Alert';
+  -import AlertTitle from '@material-ui/lab/AlertTitle';
+  +import Alert from '@material-ui/core/Alert';
+  +import AlertTitle from '@material-ui/core/AlertTitle';
+  ```
 
 ### Avatar
 
@@ -255,12 +301,12 @@ const theme = createMuitheme({
 
   ```diff
   <Dialog
-  -  onEnter={onEnter}
-  -  onEntered={onEntered},
-  -  onEntering={onEntered},
-  -  onExit={onEntered},
-  -  onExited={onEntered},
-  -  onExiting={onEntered}
+  - onEnter={onEnter}
+  - onEntered={onEntered},
+  - onEntering={onEntered},
+  - onExit={onEntered},
+  - onExited={onEntered},
+  - onExiting={onEntered}
   +  TransitionProps={{
   +    onEnter,
   +    onEntered,
@@ -299,24 +345,24 @@ const theme = createMuitheme({
 
   -<ExpansionPanel>
   +<Accordion>
-  -  <ExpansionPanelSummary>
+  - <ExpansionPanelSummary>
   +  <AccordionSummary>
        <Typography>Location</Typography>
        <Typography>Select trip destination</Typography>
-  -  </ExpansionPanelSummary>
+  - </ExpansionPanelSummary>
   +  </AccordionSummary>
-  -  <ExpansionPanelDetails>
+  - <ExpansionPanelDetails>
   +  <AccordionDetails>
        <Chip label="Barbados" onDelete={() => {}} />
        <Typography variant="caption">Select your destination of choice</Typography>
-  -  </ExpansionPanelDetails>
+  - </ExpansionPanelDetails>
   +  </AccordionDetails>
      <Divider />
-  -  <ExpansionPanelActions>
+  - <ExpansionPanelActions>
   +  <AccordionActions>
        <Button size="small">Cancel</Button>
        <Button size="small">Save</Button>
-  -  </ExpansionPanelActions>
+  - </ExpansionPanelActions>
   +  </AccordionActions>
   -</ExpansionPanel>
   +</Accordion>
@@ -334,7 +380,7 @@ const theme = createMuitheme({
   ```diff
   <Accordion
     classes={{
-  -    focused: 'custom-focus-visible-classname',
+  - focused: 'custom-focus-visible-classname',
   +    focusVisible: 'custom-focus-visible-classname',
     }}
   />
@@ -347,6 +393,14 @@ const theme = createMuitheme({
   ```diff
   -<Fab variant="round">
   +<Fab variant="circular">
+  ```
+
+### Chip
+
+- Rename `default` variant to `filled` for consistency.
+  ```diff
+  -<Chip variant="default">
+  +<Chip variant="filled">
   ```
 
 ### Grid
@@ -376,16 +430,16 @@ const theme = createMuitheme({
 +import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 
 -<GridList spacing={8} cellHeight={200}>
--  <GridListTile>
+- <GridListTile>
 +<ImageList gap={8} rowHeight={200}>
 +  <ImageListItem>
      <img src="file.jpg" alt="Image title" />
--    <GridListTileBar
+- <GridListTileBar
 +    <ImageListItemBar
        title="Title"
        subtitle="Subtitle"
      />
--  </GridListTile>
+- </GridListTile>
 -</GridList>
 +  </ImageListItem>
 +</ImageList>
@@ -397,12 +451,12 @@ const theme = createMuitheme({
 
   ```diff
   <Menu
-  -  onEnter={onEnter}
-  -  onEntered={onEntered},
-  -  onEntering={onEntered},
-  -  onExit={onEntered},
-  -  onExited={onEntered},
-  -  onExiting={onEntered}
+  - onEnter={onEnter}
+  - onEntered={onEntered},
+  - onEntering={onEntered},
+  - onExit={onEntered},
+  - onExited={onEntered},
+  - onExiting={onEntered}
   +  TransitionProps={{
   +    onEnter,
   +    onEntered,
@@ -443,12 +497,12 @@ const theme = createMuitheme({
 
   ```diff
   <Popover
-  -  onEnter={onEnter}
-  -  onEntered={onEntered},
-  -  onEntering={onEntered},
-  -  onExit={onEntered},
-  -  onExited={onEntered},
-  -  onExiting={onEntered}
+  - onEnter={onEnter}
+  - onEntered={onEntered},
+  - onEntering={onEntered},
+  - onExit={onEntered},
+  - onExited={onEntered},
+  - onExiting={onEntered}
   +  TransitionProps={{
   +    onEnter,
   +    onEntered,
@@ -480,7 +534,7 @@ const theme = createMuitheme({
   ```diff
   <Rating
     classes={{
-  -    visuallyhidden: 'custom-visually-hidden-classname',
+  - visuallyhidden: 'custom-visually-hidden-classname',
   +    visuallyHidden: 'custom-visually-hidden-classname',
     }}
   />
@@ -492,7 +546,7 @@ const theme = createMuitheme({
 
   ```diff
   -<RootRef rootRef={ref}>
-  -  <Button />
+  - <Button />
   -</RootRef>
   +<Button ref={ref} />
   ```
@@ -521,7 +575,7 @@ const theme = createMuitheme({
 
 ### Snackbar
 
-- The notification now displays at the bottom left on large screens. This better matches the behavior of Gmail, Google Keep, material.io, etc. You can restore the previous behavior with:
+- The notification now displays at the bottom left on large screens. This better matches the behavior of Gmail, Google Keep, material.io, etc. You can restore the previous behavior with: You can restore the previous behavior with:
 
   ```diff
   -<Snackbar />
@@ -532,12 +586,12 @@ const theme = createMuitheme({
 
   ```diff
   <Snackbar
-  -  onEnter={onEnter}
-  -  onEntered={onEntered},
-  -  onEntering={onEntered},
-  -  onExit={onEntered},
-  -  onExited={onEntered},
-  -  onExiting={onEntered}
+  - onEnter={onEnter}
+  - onEntered={onEntered},
+  - onEntering={onEntered},
+  - onExit={onEntered},
+  - onExited={onEntered},
+  - onExiting={onEntered}
   +  TransitionProps={{
   +    onEnter,
   +    onEntered,
@@ -555,9 +609,9 @@ const theme = createMuitheme({
 
 ```diff
 -<Stepper elevation={2}>
--  <Step>
--    <StepLabel>Hello world</StepLabel>
--  </Step>
+- <Step>
+- <StepLabel>Hello world</StepLabel>
+- </Step>
 -</Stepper>
 +<Paper square elevation={2}>
 +  <Stepper>
@@ -572,9 +626,9 @@ const theme = createMuitheme({
 
 ```diff
 -<Stepper>
--  <Step>
--    <StepLabel>Hello world</StepLabel>
--  </Step>
+- <Step>
+- <StepLabel>Hello world</StepLabel>
+- </Step>
 -</Stepper>
 +<Stepper style={{ padding: 24 }}>
 +  <Step>
