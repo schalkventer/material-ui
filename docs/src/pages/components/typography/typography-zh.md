@@ -1,6 +1,6 @@
 ---
 title: Typography 文字铸排
-components: 文字铸排
+components: 文字排版
 githubLabel: 'component: Typography'
 materialDesign: https://material.io/design/typography/the-type-system.html
 ---
@@ -62,6 +62,7 @@ import 'fontsource-roboto';
 <Typography variant="h1" component="h2">
   h1. 标题
 </Typography> 标题
+</Typography>; 标题
 </Typography>;
 ```
 
