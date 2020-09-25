@@ -136,7 +136,7 @@ yarn add @material-ui/styles
   }
   ```
 
-  _提示：您可以提供多个参数：`theme.spacing(1, 2) // = '8px 16px'。`_
+  提示：您可以提供多个参数：`theme.spacing(1, 2) // = '8px 16px'。 `
 
   您可以在项目中使用 [迁移小帮手](https://github.com/mui-org/material-ui/tree/master/packages/material-ui-codemod/README.md#theme-spacing-api) 来让您的迁移流程更加顺畅。
 
@@ -213,7 +213,7 @@ function MySelect({ children }) {
 
   当 `button` 属性设置为 true 时，这也适用于 `BottomNavigationAction`，`Button`，`CardActionArea`，`Checkbox`，`ExpansionPanelSummary`，`Fab`，`IconButton`，`MenuItem`，`Radio`，`StepButton`，`Tab`，`TableSortLabel` 以及 `ListItem`。
 
-### Card
+### Cards（卡片）
 
 - [CardActions] 将 `disableActionSpacing` 属性重命名为 `disableSpacing`。
 - [CardActions] 移除 CSS类中的 `disableActionSpacing`。
@@ -308,7 +308,7 @@ function MySelect({ children }) {
   +track
   ```
 
-### Snackbar
+### Snackbar（消息条）
 
 - [Snackbar] 匹配新的规范。
 
@@ -384,7 +384,7 @@ function MySelect({ children }) {
 - [Tooltip] 子组件能够接受一个 ref。 [组合指南](/guides/composition/#caveat-with-refs)解释了迁移的策略。
 - [Tooltip] 相比以前任何聚焦都会出现，现在只会在 focus-visible 聚焦的时候出现。
 
-### 文字铸排
+### 文字排版
 
 - [Typography] 移除了各种弃用的铸排变体。 您可以通过执行以下的替换来升级：
   - display4 => h1
