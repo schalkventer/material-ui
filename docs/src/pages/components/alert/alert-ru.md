@@ -2,7 +2,6 @@
 title: Компонент Alert
 components: Alert, AlertTitle
 githubLabel: 'component: Alert'
-packageName: '@material-ui/lab'
 waiAria: 'https://www.w3.org/TR/wai-aria-practices/#alert'
 ---
 
@@ -18,7 +17,7 @@ waiAria: 'https://www.w3.org/TR/wai-aria-practices/#alert'
 
 Alert предлагает 4 уровня предупреждения с уникальным цветом и значком.
 
-{{"demo": "pages/components/alert/SimpleAlerts.js"}}
+{{"demo": "pages/components/alert/BasicAlerts.js"}}
 
 ## Описание
 
