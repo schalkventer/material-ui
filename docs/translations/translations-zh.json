@@ -148,7 +148,7 @@
     "/components/modal": "Modal 模态框",
     "/components/navigation": "Navigation 导航栏",
     "/components/no-ssr": "非服务端渲染（SSR）",
-    "/components/other": "其他的",
+    "/components/other": "其他",
     "/components/paper": "Paper 纸张",
     "/components/pickers": "Date/Time 日期/时间选择器",
     "/components/popover": "Popover 弹出框",
@@ -188,7 +188,7 @@
     "/system/shadows": "阴影",
     "/system/sizing": "Sizing 大小",
     "/system/spacing": "Spacing 间距",
-    "/system/typography": "文字铸排",
+    "/system/typography": "文字排版",
     "/customization": "Customization 个性化",
     "/customization/theming": "Overview 概览",
     "/customization/theme": "Theming 主题",
@@ -196,7 +196,7 @@
     "/customization/color": "Color 颜色",
     "/customization/palette": "Palette 调色板",
     "/customization/type": "类型（浅色/深色主题）",
-    "/customization/typography": "文字铸排",
+    "/customization/typography": "文字排版",
     "/customization/spacing": "Spacing 间距",
     "/customization/z-index": "z-index",
     "/customization/globals": "全局样式",
@@ -241,6 +241,6 @@
     "/components/floating-action-button": "Floating Action Buttons 浮动操作按钮",
     "/components/backdrop": "Backdrop",
     "/components/alert": "Alert 警告提示",
-    "/components/pagination": "分页"
+    "/components/pagination": "分页组件 Pagination "
   }
 }
