@@ -9,6 +9,8 @@ components: Grid
 
 Uma [grade](https://material.io/design/layout/responsive-layout-grid.html) cria consistência visual entre leiautes, enquanto permite flexibilidade em uma ampla variedade de projetos. A UI responsiva do Material Design é baseada em um leiaute de grade com 12 colunas.
 
+> ⚠️ The `Grid` component shouldn't be confused with a data grid; it is closer to a layout grid. For a data grid head to [the `DataGrid` component](/components/data-grid/).
+
 ## Como funciona
 
 O sistema de grade é implementado com o componente `Grid`:
