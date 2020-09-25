@@ -2,7 +2,6 @@
 title: Hinweis React-Komponente
 components: Alert, AlertTitle
 githubLabel: 'component: Alert'
-packageName: '@material-ui/lab'
 waiAria: 'https://www.w3.org/TR/wai-aria-practices/#alert'
 ---
 
@@ -18,7 +17,7 @@ waiAria: 'https://www.w3.org/TR/wai-aria-practices/#alert'
 
 Der Hinweis bietet vier Schweregrade an, welche je ein eigenes Icon und eine eigene Farbe besitzen.
 
-{{"demo": "pages/components/alert/SimpleAlerts.js"}}
+{{"demo": "pages/components/alert/BasicAlerts.js"}}
 
 ## Beschreibung
 
