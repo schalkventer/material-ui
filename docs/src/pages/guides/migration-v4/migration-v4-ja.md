@@ -46,6 +46,30 @@ Support for non-ref-forwarding class components in the `component` prop or as an
 
 ### テーマ
 
+- Breakpoints are now treated as values instead of ranges. The behavior of `down(key)` was changed to define media query less than the value defined with the corresponding breakpoint (exclusive). The `between(start, end)` was also updated to define media query for the values between the actual values of start (inclusive) and end (exclusive). When using the `down()` breakpoints utility you need to update the breakpoint key by one step up. When using the `between(start, end)` the end breakpoint should also be updated by one step up. The same should be done when using the `Hidden` component. Find examples of the changes required defined below:
+
+```diff
+-theme.breakpoints.down('sm') // '@media (max-width:959.95px)' - [0, sm + 1) => [0, md)
++theme.breakpoints.down('md') // '@media (max-width:959.95px)' - [0, md)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'md') // '@media (min-width:600px) and (max-width:1279.95px)' - [sm, md + 1) => [0, lg)
++theme.breakpoints.between('sm', 'lg') // '@media (min-width:600px) and (max-width:1279.95px)' - [0, lg)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'xl') // '@media (min-width:600px)'
++theme.breakpoints.up('sm') // '@media (min-width:600px)'
+```
+
+```diff
+-<Hidden smDown>{...}</Hidden> // '@media (min-width:600px)'
++<Hidden mdDown>{...}</Hidden> // '@media (min-width:600px)'
+```
+
+#### Upgrade helper
+
 For a smoother transition, the `adaptV4Theme` helper allows you to iteratively upgrade to the new theme structure.
 
 ```diff
@@ -58,6 +82,8 @@ For a smoother transition, the `adaptV4Theme` helper allows you to iteratively u
 -});
 +}));
 ```
+
+The following changes are supported by the adapter.
 
 #### Changes
 
@@ -118,6 +144,15 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 - The components' definition inside the theme were restructure under the `components` key, to allow people easier discoverability about the definitions regarding one component.
 
+- The `theme.palette.type` was renamed to `theme.palette.mode`, to better follow the "dark mode" term that is usually used for describing this feature.
+
+```diff
+import { createMuiTheme } from '@material-ui/core/styles';
+
+-const theme = createMuitheme({palette: { type: 'dark' }}),
++const theme = createMuitheme({palette: { mode: 'dark' }}),
+```
+
 1. `props`
 
 ```diff
@@ -159,6 +194,17 @@ const theme = createMuitheme({
 +  },
 });
 ```
+
+### アラート
+
+- Move the component from the lab to the core. The component is now stable.
+
+  ```diff
+  -import Alert from '@material-ui/lab/Alert';
+  -import AlertTitle from '@material-ui/lab/AlertTitle';
+  +import Alert from '@material-ui/core/Alert';
+  +import AlertTitle from '@material-ui/core/AlertTitle';
+  ```
 
 ### Avatar
 
@@ -347,6 +393,14 @@ const theme = createMuitheme({
   ```diff
   -<Fab variant="round">
   +<Fab variant="circular">
+  ```
+
+### Chip
+
+- Rename `default` variant to `filled` for consistency.
+  ```diff
+  -<Chip variant="default">
+  +<Chip variant="filled">
   ```
 
 ### Grid
@@ -591,7 +645,7 @@ const theme = createMuitheme({
   <TablePagination
   - backIconButtonText="Avant"
   - nextIconButtonText="Après
-  + getItemAriaLabel={…}
+  + getItemAriaLabel={… }
   ```
 
 ### Tabs
