@@ -268,6 +268,14 @@ import Typography from '@material-ui/core/Typography';
 <Icon>add_circle</Icon>
 <Typography variant="srOnly">Erstellen Sie einen Benutzer</Typography>
 
+import Icon from '@material-ui/core/Icon';
+import Typography from '@material-ui/core/Typography';
+
+// ...
+
+<Icon>add_circle</Icon>
+<Typography variant="srOnly">Erstellen Sie einen Benutzer</Typography>
+
 <Icon>add_circle</Icon>
 <span className={classes.visuallyHidden}>Erstellen Sie einen Benutzer</span>
 ```
