@@ -91,4 +91,4 @@ React [不支持](https://github.com/facebook/react/issues/13097)服务端渲染
   ```
 
 - 这篇 [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html) 里的方法可以根据你的模态窗口里的内容, 为最合适的元素设置初始焦点.
-- 请记住，“模态窗口” 覆盖在主窗口或者另一个模态窗口上。 请记住，“模态窗口” 叠加在主窗口或另一个模态窗口上。 也就是说，用户不能与当前处于活跃状态下的模态框之外的内容进行交互。 因为这可能会造成[冲突行为](#focus-trap)。
+- 请记住，“模态窗口” 覆盖在主窗口或者另一个模态窗口上。 请记住，“模态窗口” 覆盖在主窗口或者另一个模态窗口上。 也就是说，用户不能与当前处于活跃状态下的模态框之外的内容进行交互。 因为这可能会造成[冲突行为](#focus-trap)。
