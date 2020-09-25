@@ -13,6 +13,8 @@ materialDesign: https://material.io/design/layout/understanding-layout.html
 
 {{"component": "modules/components/ComponentLinkHeader.js"}}
 
+> ⚠️ The `Grid` component shouldn't be confused with a data grid; it is closer to a layout grid. For a data grid head to [the `DataGrid` component](/components/data-grid/).
+
 ## Как это работает
 
 Система сетки реализована с помощью компонента `Grid`:
