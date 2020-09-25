@@ -17,19 +17,19 @@ components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead,
 
 При использовании таких инструментов их следует размещать непосредственно сверху или снизу таблицы.
 
-## Basic table
+## Структура
 
 Простой пример без излишеств.
 
-{{"demo": "pages/components/tables/BasicTable.js", "bg": true}}
+Таблица данных содержит 1 строку заголовка, в которой перечислены имена столбцов, за которыми следуют строки для данных.
 
-## Dense table
+## Простая таблица
 
-Простой пример таблицы с плотной компоновкой и без излишеств.
+Флажки должны сопровождать каждую строку, если пользователю необходимо выбрать или манипулировать данными.
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}}
 
-## Sorting & selecting
+## Плотная компоновка таблицы
 
 В этом примере демонстрируется использование `чекбокса` и кликабельных строк для выбора данных в настраиваемой `панели инструментов`. Здесь используется компонент `TableSortLabel` чтобы помочь стилизовать заголовки столбцов.
 
@@ -37,7 +37,7 @@ components: Table, TableBody, TableCell, TableContainer, TableFooter, TableHead,
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}}
 
-## Data table
+## Сортировка и выбор строк
 
 The `Table` component has a close mapping to the native `<table>` elements. This constraint makes building rich data tables challenging.
 
@@ -83,13 +83,13 @@ An example of a table with expandable rows, revealing more information. It utili
 
 {{"demo": "pages/components/tables/CollapsibleTable.js", "bg": true}}
 
-## Spanning table
+## Объединение таблиц
 
 Простой пример с объединением строк и столбцов.
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}}
 
-## Virtualized table
+## Виртуализированная таблица
 
 В следующем примере мы покажем, как использовать [react-virtualized](https://github.com/bvaughn/react-virtualized) с компонентом `Table`. Он отображает 200 строк и c легкостью может еще больше. Virtualization helps with performance issues.
 
