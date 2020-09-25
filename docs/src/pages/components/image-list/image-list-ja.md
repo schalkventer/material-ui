@@ -55,6 +55,6 @@ The title bar can be placed below the image.
 
 ## Custom image list
 
-この例では、`rows` and `cols` プロップを使用してタイルのサイズを調整し、 `padding`プロップを使用して間隔を調整する方法を示します。 セカンダリアクション `IconButton` は左側に配置されます。 タイルには、上部にカスタムのタイトルバーがあり、カスタムのグラデーション`titleBackground`があります。
+タイルには、上部にカスタムのタイトルバーがあり、カスタムのグラデーション`titleBackground`があります。 セカンダリアクション `IconButton` は左側に配置されます。 タイルには、上部にカスタムのタイトルバーがあり、カスタムのグラデーション`titleBackground`があります。
 
 {{"demo": "pages/components/image-list/CustomImageList.js", "defaultCodeOpen": false}}
