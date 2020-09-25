@@ -19,6 +19,7 @@ packageName: '@material-ui/lab'
 
 ```jsx
 {
+  item ? {
   item ? {item ? (
   <img style={{ width: 210, height: 118 }} alt={item.title} src={item.src} />
 ) : (
@@ -53,7 +54,7 @@ packageName: '@material-ui/lab'
 当您在排版的时候会得心应手，因为它的高度是用 `em` 单位设置的。
 
 ```jsx
-<Typography variant="h1">{loading ? <Skeleton /> : 'h1'}</Typography>
+<Typography variant="h1">{loading ? <Skeleton /> : 'h1'}</Typography> <Skeleton /> : 'h1'}</Typography>
 ```
 
 {{"demo": "pages/components/skeleton/SkeletonTypography.js", "defaultCodeOpen": false}}
