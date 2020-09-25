@@ -47,7 +47,7 @@ Fontsource может быть настроен на загрузку опред
 
 ## Темы
 
-В некоторых ситуациях вы не сможете использовать компонент `Typography`. Надеемся, что вы сможете воспользоваться ключами свойства темы [` typograpthy`](/customization/default-theme/?expand-path=$.typography).
+В некоторых ситуациях вы не сможете использовать компонент `Typography`. Надеемся, что вы сможете воспользоваться ключами свойства темы [`typograpthy`](/customization/default-theme/?expand-path=$.typography).
 
 {{"demo": "pages/components/typography/TypographyTheme.js"}}
 
