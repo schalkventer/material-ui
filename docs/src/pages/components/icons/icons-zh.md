@@ -1,7 +1,7 @@
 ---
 title: React 图标组件
 components: Icon, SvgIcon
-githubLabel: 'components: SvgIcon'
+githubLabel: 'SvgIcon（Svg 图标）'
 materialDesign: https://material.io/design/iconography/system-icons.html
 ---
 
@@ -76,7 +76,7 @@ yarn add @material-ui/core
 
 ### 测试
 
-出于测试目的，每个从 `@material-ui/icons` 暴露的图标都有一个 `data-testid` 属性，这其中包含了图标的名称。 就像这样：
+For testing purposes, each icon exposed from `@material-ui/icons` has a `data-testid` attribute with the name of the icon. 就像这样： 就像这样：
 
 ```jsx
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -176,7 +176,7 @@ Material Design 将 [1100 多个海量官方图标](#material-icons) 标准化�
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 ```
 
-`Icon`  将为 Material icon font 设置正确的类名。 `Icon`  将为 Material icon font 设置正确的 class 名字。
+`Icon`  将为 Material icon font 设置正确的类名。 `Icon`  将为 Material icon font 设置正确的类名。
 
 若想要使用图标，您只需把图标名（字体连字）和 `Icon` 组件包装到一起，例如：
 
@@ -264,6 +264,14 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 如果您的图标具有语义含义，您则需要提供一个对协助的技术可见的文本替代方法。
 
 ```jsx
+import Icon from '@material-ui/core/Icon';
+import Typography from '@material-ui/core/Typography';
+
+// ...
+
+<Icon>add_circle</Icon>
+<Typography variant="srOnly">创建一个用户</Typography>
+
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 
