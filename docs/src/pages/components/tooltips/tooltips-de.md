@@ -101,6 +101,11 @@ Standardmäßig lösen deaktivierte Elemente wie `<button>` keine Benutzerintera
       {'A disabled button'}
     </button>
   </span>
+</Tooltip> { pointerEvents: 'none' } : {}}
+    >
+      {'A disabled button'}
+    </button>
+  </span>
 </Tooltip>
 ```
 
