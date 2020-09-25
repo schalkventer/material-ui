@@ -5,7 +5,7 @@ githubLabel: 'component: Pagination'
 packageName: '@material-ui/lab'
 ---
 
-# Paginación
+# Pagination
 
 <p class="description">El componente de paginación permite al usuario seleccionar una página específica de un rango de páginas.</p>
 
