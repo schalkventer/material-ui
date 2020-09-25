@@ -33,30 +33,34 @@ Esta es una colección de proyectos de terceros que amplían Material-UI.
 
 - [@mui-treasury/layout](https://mui-treasury.com/layout): Componentes para manejar el diseño general de una página. Puede encontrar un par de ejemplos, por ejemplo, [un clon de reactjs.org](https://mui-treasury.com/layout/clones/reactjs).
 
+### Table (Tabla)
+
+- [notistack](https://github.com/iamhosseindhv/notistack): Hace que sea fácil mostrar notificaciones (para que no tenga que lidiar con el estado abierto/cerrado de ellas).
+
 ### Notificación
 
 - [notistack](https://github.com/iamhosseindhv/notistack): Hace que sea fácil mostrar notificaciones (para que no tenga que lidiar con el estado abierto/cerrado de ellas).
 
 ### Subir
 
-- [material-ui-dropzone](https://github.com/Yuvaleros/material-ui-dropzone): Construido sobre react-dropzone.
-
-### Formulario
-
 - [formik-material-ui](https://github.com/stackworx/formik-material-ui) Bindings for using Material-UI with [formik](https://jaredpalmer.com/formik).
 - [redux-form-material-ui](https://github.com/erikras/redux-form-material-ui) Bindings for using Material-UI with [Redux Form](https://redux-form.com/).
 - [mui-rff](https://github.com/lookfirst/mui-rff) Bindings for using Material-UI with [React Final Form](https://final-form.org/react).
 - [data-driven-forms MUI mapper](https://github.com/data-driven-forms/react-forms/tree/master/packages/mui-component-mapper) enlaces para usar Material-UI con [Data Driven Forms](https://data-driven-forms.org/).
 
+### Formulario
+
+- [mui-rff](https://github.com/lookfirst/mui-rff) Bindings for using Material-UI with [React Final Form](https://final-form.org/react).
+
 ### Carrusel
-
-- [material-auto-rotating-carrusel](https://mui.wertarbyte.com/#material-auto-rotating-carousel): Presenta nuevos usuarios a tu aplicación.
-
-### Imagen
 
 - [material-ui-image](https://mui.wertarbyte.com/#material-ui-image): Las imágenes son feas hasta que estén cargadas. ¡Materialízalo con material image! Se desvanecerá como lo sugiere el patrón de carga de material image.
 
 ### Pagination
+
+- [crear-mui-theme](https://react-theming.github.io/create-mui-theme/): Una herramienta en línea para crear temas de Material-UI a través de Material Design Color Tool.
+
+### Paginación
 
 - [material-ui-plan-pagination](https://github.com/szmslab/material-ui-flat-pagination): Un componente de paginación de diseño plano para Material-UI.
 
@@ -64,13 +68,9 @@ Esta es una colección de proyectos de terceros que amplían Material-UI.
 
 - [dx-react-scheduler-material-ui](https://devexpress.github.io/devextreme-reactive/react/scheduler/): Un componente de planificador/calendario para Material-UI con múltiples vistas de calendario, edición, citas de repetición y características de navegación de fecha ([licencia de pago](https://js.devexpress.com/licensing/)).
 
-### Gráfico
-
-- [dx-react-chart-material-ui](https://devexpress.github.io/devextreme-reactive/react/chart/): Gráficos para Material-UI que visualiza los datos usando una variedad de tipos de series, incluyendo barras, líneas, áreas, scatter, tarta y más ([licencia de pago](https://js.devexpress.com/licensing/)).
-
 ### Dialog
 
-- [material-ui-confirm](https://github.com/jonatanklosko/material-ui-confirm): Proporciona diálogos de confirmación fáciles de usar para simplificar la confirmación de acciones del usuario sin escribir código de boilerplate.
+- [dx-react-chart-material-ui](https://devexpress.github.io/devextreme-reactive/react/chart/): Gráficos para Material-UI que visualiza los datos usando una variedad de tipos de series, incluyendo barras, líneas, áreas, scatter, tarta y más ([licencia de pago](https://js.devexpress.com/licensing/)).
 
 ### Selector de color
 
