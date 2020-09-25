@@ -17,27 +17,19 @@ Las tablas pueden incluir:
 
 Cuando se incluyen herramientas, se deberían poner directamente arriba o debajo de la tabla.
 
-## Estructura
-
-Una tabla de datos contiene una cabecera en la parte superior con los nombres de las columnas, seguida por las filas de datos.
-
-Un checkbox debe acompañar a cada fila por si el usuario necesita seleccionar o manipular datos.
-
-Utiliza el componente `TableSortLabel` para ayudar a dar estilo a las cabeceras de las columnas. Esto permite a los lectores de pantalla identificar el valor de una celda por el nombre de su fila y columna.
-
-## Tabla Sencilla
+## Basic table
 
 Un ejemplo sencillo sin florituras.
 
-{{"demo": "pages/components/tables/SimpleTable.js", "bg": true}}
+{{"demo": "pages/components/tables/BasicTable.js", "bg": true}}
 
-## Tabla Densa
+## Dense table
 
 Un Ejemplo de una tabla densa sin florituras.
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}}
 
-## Ordenando & Seleccionando
+## Sorting & selecting
 
 Este ejemplo demuestra el uso del `Checkbox` y las filas cliqueables para seleccionar, con una `Toolbar` personalizado. Utiliza el componente `TableSortLabel` para ayudar a dar estilo a las cabeceras de las columnas.
 
@@ -45,9 +37,15 @@ La Tabla tiene un ancho fijo para demostrar el desplazamiento horizontal. Para e
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}}
 
+## Data table
+
+The `Table` component has a close mapping to the native `<table>` elements. This constraint makes building rich data tables challenging.
+
+The [`DataGrid` component](/components/data-grid/) is designed for use-cases that are focused around handling a large amounts of tabular data. While it comes with a more rigid structure, in exchange, you gain more powerful features.
+
 ## Tablas personalizadas
 
-La siguiente tabla muestra un ejemplo de personalización del componente. Puedes aprender más sobre esto en la [sección Personalizando Componentes de la documentación](/customization/components/).
+He aquí un ejemplo de personalización del componente. You can learn more about this in the [overrides documentation page](/customization/components/).
 
 {{"demo": "pages/components/tables/CustomizedTables.js", "bg": true}}
 
@@ -85,35 +83,17 @@ An example of a table with expandable rows, revealing more information. It utili
 
 {{"demo": "pages/components/tables/CollapsibleTable.js", "bg": true}}
 
-## Tabla Expandible
+## Spanning table
 
 Un ejemplo sencillo con filas & columnas expandibles.
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}}
 
-## Tabla Virtualizada
+## Virtualized table
 
 En el siguiente ejemplo, demostramos como usar [react-virtualized](https://github.com/bvaughn/react-virtualized) con el componente `Table`. Renderiza 200 filas y fácilmente puede manejar más. La virtualización ayuda con problemas de rendimiento.
 
 {{"demo": "pages/components/tables/ReactVirtualizedTable.js", "bg": true}}
-
-## Proyectos relacionados
-
-Para usos más avanzados tal vez puedas aprovercharte de:
-
-### material-table
-
-![estrellas](https://img.shields.io/github/stars/mbrn/material-table.svg?style=social&label=Stars) ![descargas npm](https://img.shields.io/npm/dm/material-table.svg)
-
-[material-table](https://github.com/mbrn/material-table) is a simple and powerful Datatable for React based on Material-UI Table with some additional features. They support many different use cases (editable, filtering, grouping, sorting, selection, i18n, tree data and more). You should check it out.
-
-{{"demo": "pages/components/tables/MaterialTableDemo.js", "bg": true}}
-
-### Otros
-
-- [dx-react-grid-material-ui](https://devexpress.github.io/devextreme-reactive/react/grid/): A data grid for Material-UI with paging, sorting, filtering, grouping and editing features ([paid license](https://js.devexpress.com/licensing/)).
-- [mui-datatables](https://github.com/gregnb/mui-datatables): Responsive data tables for Material-UI with filtering, sorting, search and more.
-- [tubular-react](https://github.com/unosquare/tubular-react): A Material-UI table with local or remote data-source. Featuring filtering, sorting, free-text search, export to CSV locally, and aggregations.
 
 ## Accesibilidad
 
