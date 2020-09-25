@@ -17,33 +17,31 @@ As tabelas podem incluir:
 
 Ao incluir ferramentas, elas devem ser colocadas diretamente acima ou abaixo da tabela.
 
-## Estrutura
+## Basic table
 
-Uma tabela de dados contém uma linha de cabeçalho no topo que lista os nomes das colunas, seguidas pelas linhas dos dados.
+Um exemplo simples sem frescuras.
 
-Caixas de seleção devem estar presentes em cada linha se o usuário precisar selecionar ou manipular dados.
+{{"demo": "pages/components/tables/BasicTable.js", "bg": true}}
 
-Para acessibilidade, a primeira coluna é ajustada para ser um elemento `<th>`, com um `scope` de `"col"`. Isso permite que os leitores de tela identifiquem o valor de uma célula por sua linha e nome da coluna.
-
-## Tabela Simples
-
-Um exemplo simples sem muito enfeite.
-
-{{"demo": "pages/components/tables/SimpleTable.js", "bg": true}}
-
-## Tabela Densa
+## Dense table
 
 Um exemplo simples de uma tabela densa sem muito enfeite.
 
 {{"demo": "pages/components/tables/DenseTable.js", "bg": true}}
 
-## Classificando & Selecionando
+## Sorting & selecting
 
 Este exemplo demonstra o uso de linhas clicáveis com `Checkbox` para a seleção, e com um componente `Toolbar` customizado. Ele usa o componente `TableSortLabel` para ajudar no estilo dos cabeçalhos das colunas.
 
 A tabela recebeu uma largura fixa para demonstrar a rolagem horizontal. Para impedir que os controles de paginação rolem, o componente TablePagination é usado fora da tabela. (O [Exemplo da 'ação de paginação customizada'](#custom-pagination-actions) abaixo mostra a paginação dentro de um TableFooter.)
 
 {{"demo": "pages/components/tables/EnhancedTable.js", "bg": true}}
+
+## Data table
+
+The `Table` component has a close mapping to the native `<table>` elements. This constraint makes building rich data tables challenging.
+
+The [`DataGrid` component](/components/data-grid/) is designed for use-cases that are focused around handling a large amounts of tabular data. While it comes with a more rigid structure, in exchange, you gain more powerful features.
 
 ## Tabelas Customizadas
 
@@ -53,7 +51,7 @@ Aqui está um exemplo de customização do componente. Você pode aprender mais 
 
 ### Opções de paginação customizada
 
-É possível customizar as opções mostradas na seleção "Rows per page" usando a propriedade `rowsPerPageOptions`. Você deve fornecer um array de:
+É possível personalizar as opções mostradas em "Linhas por página" selecione usando a propriedade `rowsPerPageOptions`. Você deve fornecer um array de:
 
 - **numbers**, cada número será usado para o rótulo e valor da opção.
     
@@ -69,7 +67,7 @@ Aqui está um exemplo de customização do componente. Você pode aprender mais 
 
 ### Ações de paginação customizada
 
-A propriedade `ActionsComponent` do componente `TablePagination` permite a implementação de ações customizadas.
+A propriedade `ActionsComponent` do componente `TablePagination` permite a implementação de ações personalizadas.
 
 {{"demo": "pages/components/tables/CustomPaginationActionsTable.js", "bg": true}}
 
@@ -85,35 +83,17 @@ Um exemplo de uma tabela com linhas expansíveis, revelando mais informações. 
 
 {{"demo": "pages/components/tables/CollapsibleTable.js", "bg": true}}
 
-## Abrangendo Tabela
+## Spanning table
 
 Um exemplo simples com abrangência de linhas & colunas.
 
 {{"demo": "pages/components/tables/SpanningTable.js", "bg": true}}
 
-## Tabela Virtualizada
+## Virtualized table
 
 No exemplo a seguir, nós demonstramos como usar [react-virtualized](https://github.com/bvaughn/react-virtualized) com o componente `Table`. Ela renderiza 200 linhas e pode facilmente lidar com mais. A virtualização ajuda a lidar com problemas de desempenho.
 
 {{"demo": "pages/components/tables/ReactVirtualizedTable.js", "bg": true}}
-
-## Projetos Complementares
-
-Para situações de uso mais avançadas, você pode tirar proveito com:
-
-### material-table
-
-![estrelas](https://img.shields.io/github/stars/mbrn/material-table.svg?style=social&label=Stars) ![npm downloads](https://img.shields.io/npm/dm/material-table.svg)
-
-A biblioteca [material-table](https://github.com/mbrn/material-table), fornece uma tabela de dados simples e poderosa para React baseado na tabela do Material-UI com alguns recursos adicionais. Eles suportam muitas formas de utilização (edição, filtragem, agrupamento, ordenação, seleção, i18n, árvore de dados e muito mais). Você deveria dar uma olhada.
-
-{{"demo": "pages/components/tables/MaterialTableDemo.js", "bg": true}}
-
-### Outros
-
-- [dx-react-grid-material-ui](https://devexpress.github.io/devextreme-reactive/react/grid/): Uma grade de dados para Material-UI com paginação, ordenação, filtragem, agrupamento e funções de edição.([Com licenciamento de uso pago](https://js.devexpress.com/licensing/)).
-- [mui-datatables](https://github.com/gregnb/mui-datatables): Tabelas de dados responsivas para Material-UI com filtro, ordenação, pesquisa e muito mais.
-- [tubular-react](https://github.com/unosquare/tubular-react): Uma tabela de Material-UI com fonte de dados local ou remota. Com filtragem, classificação, pesquisa de texto livre, exportação para CSV localmente e agregações.
 
 ## Acessibilidade
 
