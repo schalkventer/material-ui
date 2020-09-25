@@ -8,7 +8,7 @@
 
 ## 简介
 
-当你将站点从 Material-UI 的 v4 版本升级到 v5 版本时，这篇文章会为你提供一些参考。 您可能不会将这里所有涵盖的内容运用到你的站点上。 我们会尽我们最大的努力让文档简单易懂，并尽可能有序地介绍，这样你可以迅速对 v5 版本游刃有余。
+当你将站点从 Material-UI 的 v4 版本升级到 v5 版本时，这篇文章会为你提供一些参考。 您可能不会将这里所有涵盖的内容运用到你的站点上。 您可能不会将这里所有涵盖的内容运用到你的站点上。 我们会尽我们最大的努力让文档简单易懂，并尽可能有序地介绍，这样你可以迅速对 v5 版本游刃有余。
 
 ## 为什么您需要迁移呢
 
@@ -46,6 +46,30 @@ yarn add @material-ui/core@next
 
 ### 主题
 
+- Breakpoints are now treated as values instead of ranges. The behavior of `down(key)` was changed to define media query less than the value defined with the corresponding breakpoint (exclusive). The `between(start, end)` was also updated to define media query for the values between the actual values of start (inclusive) and end (exclusive). When using the `down()` breakpoints utility you need to update the breakpoint key by one step up. When using the `between(start, end)` the end breakpoint should also be updated by one step up. The same should be done when using the `Hidden` component. Find examples of the changes required defined below:
+
+```diff
+-theme.breakpoints.down('sm') // '@media (max-width:959.95px)' - [0, sm + 1) => [0, md)
++theme.breakpoints.down('md') // '@media (max-width:959.95px)' - [0, md)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'md') // '@media (min-width:600px) and (max-width:1279.95px)' - [sm, md + 1) => [0, lg)
++theme.breakpoints.between('sm', 'lg') // '@media (min-width:600px) and (max-width:1279.95px)' - [0, lg)
+```
+
+```diff
+-theme.breakpoints.between('sm', 'xl') // '@media (min-width:600px)'
++theme.breakpoints.up('sm') // '@media (min-width:600px)'
+```
+
+```diff
+-<Hidden smDown>{...}</Hidden> // '@media (min-width:600px)'
++<Hidden mdDown>{...}</Hidden> // '@media (min-width:600px)'
+```
+
+#### 变更
+
 为了能实现更平滑的过渡，`adaptV4Theme` 助手允许你迭代升级到新的主题结构。
 
 ```diff
@@ -59,7 +83,9 @@ yarn add @material-ui/core@next
 +}));
 ```
 
-#### 变更
+The following changes are supported by the adapter.
+
+#### 修改前：
 
 - 事实证明，“水槽（gutters）”这个抽象的概念还没有被频繁使用，所以是没有价值的。
 
@@ -118,6 +144,23 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 - 主题内的组件定义在 `components` 键下进行了重构，以便人们更容易地发现一个组件的定义。
 
+- The `theme.palette.type` was renamed to `theme.palette.mode`, to better follow the "dark mode" term that is usually used for describing this feature.
+
+```diff
+-<Stepper elevation={2}>
+-  <Step>
+-    <StepLabel>你好，世界</StepLabel>
+-  </Step>
+-</Stepper>
++<Paper square elevation={2}>
++  <Stepper>
++    <Step>
++      <StepLabel>你好，世界</StepLabel>
++    </Step>
++  </Stepper>
++<Paper>
+```
+
 1. `属性`
 
 ```diff
@@ -159,6 +202,17 @@ const theme = createMuitheme({
 +  },
 });
 ```
+
+### Alert 警告提示
+
+- Move the component from the lab to the core. The component is now stable.
+
+  ```diff
+  -import Alert from '@material-ui/lab/Alert';
+  -import AlertTitle from '@material-ui/lab/AlertTitle';
+  +import Alert from '@material-ui/core/Alert';
+  +import AlertTitle from '@material-ui/core/AlertTitle';
+  ```
 
 ### Avatar 头像组件
 
@@ -349,6 +403,14 @@ const theme = createMuitheme({
   +<Fab variant="circular">
   ```
 
+### Chip
+
+- 为保持一致性，我们将 `visuallyhidden` 重命名为 `visuallyHidden`：
+  ```diff
+  -<Chip variant="default">
+  +<Chip variant="filled">
+  ```
+
 ### Grid
 
 - 为保持和 CSS 原生属性名字的一致性，我们将 `justify` 属性重命名为 `justifyContent`。
@@ -418,7 +480,7 @@ const theme = createMuitheme({
 
 - 移除 `onRendered` 属性。 具体迁移方法根据你的使用情况而定，你可以在子元素上使用 [callback ref](https://reactjs.org/docs/refs-and-the-dom.html#callback-refs)，也可以在子组件中使用 effect 钩子。
 
-### 分页
+### 分页组件 Pagination
 
 - 为保持一致性，我们将 `round` 重命名为 `circular`。 可能的值应该是形容词，而不是名词。
 
@@ -519,7 +581,7 @@ const theme = createMuitheme({
   +<Slider onChange={(event: React.SyntheticEvent, value: unknown) => {}} />
   ```
 
-### Snackbar
+### Snackbar（消息条）
 
 - 现在在大屏幕上的消息条通知会在左下角显示。 这更符合 Gmail、Google Keep、material.io 等应用的行为。 你可以用以下方法恢复到以前的行为：
 
@@ -554,18 +616,16 @@ const theme = createMuitheme({
 - 根组件（Paper）已经被 div 所取代。 Stepper 不再有立体效果，也不再继承 Paper 的属性。 这个改动是为了鼓励开发者进行组合使用。
 
 ```diff
--<Stepper elevation={2}>
+-<Stepper>
 -  <Step>
 -    <StepLabel>你好，世界</StepLabel>
 -  </Step>
 -</Stepper>
-+<Paper square elevation={2}>
-+  <Stepper>
-+    <Step>
-+      <StepLabel>你好，世界</StepLabel>
-+    </Step>
-+  </Stepper>
-+<Paper>
++<Stepper style={{ padding: 24 }}>
++  <Step>
++    <StepLabel>你好，世界</StepLabel>
++  </Step>
++</Stepper>
 ```
 
 - 移除内置的 24px 边距。
@@ -583,7 +643,7 @@ const theme = createMuitheme({
 +</Stepper>
 ```
 
-### TablePagination（表格分页）
+### 分页
 
 - 如果你需要自定义表格分页的操作标签（actions labels），那么就必须使用 `getItemAriaLabel` 属性。 这是为了与 `Pagination` 组件保持一致。
 
@@ -642,7 +702,7 @@ const theme = createMuitheme({
   +<TextareAutosize minRows={1}>
   ```
 
-### 文字铸排
+### 文字排版
 
 - 为了避免 [System](https://material-ui.com/system/basics/) 功能重复，我们替换了 `srOnly` 属性。
 
