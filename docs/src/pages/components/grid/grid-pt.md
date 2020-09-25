@@ -13,6 +13,8 @@ Uma [grade](https://material.io/design/layout/responsive-layout-grid.html) cria 
 
 {{"component": "modules/components/ComponentLinkHeader.js"}}
 
+> ⚠️ The `Grid` component shouldn't be confused with a data grid; it is closer to a layout grid. For a data grid head to [the `DataGrid` component](/components/data-grid/).
+
 ## Como funciona
 
 O sistema de grade é implementado com o componente `Grid`:
