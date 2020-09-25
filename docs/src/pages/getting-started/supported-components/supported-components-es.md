@@ -44,7 +44,7 @@ If you wish to add support for a component or feature not highlighted here, plea
   - **[Inset](https://material.io/design/components/dividers.html#types) ✓**
   - **[Inset](https://material.io/design/components/dividers.html#types) ✓**
   - **[Inset](https://material.io/design/components/dividers.html#types) ✓**
-- **<strong x-id="1"><a href="https://material.io/design/components/image-lists.html">Listas de Imagem</a> ✓</strong> (também conhecido como Grade Lista)**
+- **[Listas de Imagem](https://material.io/design/components/image-lists.html) ✓** (também conhecido como Grade Lista)****
 - **[Menus](https://material.io/design/components/menus.html) ✓** 
   - [Types:](https://material.io/design/components/lists.html#types) 
     - **Single line ✓**
