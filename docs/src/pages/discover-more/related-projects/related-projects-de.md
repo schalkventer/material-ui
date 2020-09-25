@@ -39,7 +39,7 @@ Dies ist eine Sammlung von Drittanbieterprojekten, die Material-UI erweitern.
 
 ### Upload
 
-- [material-ui-dropzone](https://github.com/Yuvaleros/material-ui-dropzone): Gebaut auf Basis der React-Dropzone.
+- [notistack](https://github.com/iamhosseindhv/notistack): Ermöglicht die einfache Anzeige von Snackbars (damit Sie sich nicht mit dem Öffnen/Schließen von Snackbars herumschlagen müssen).
 
 ### Form
 
@@ -50,7 +50,7 @@ Dies ist eine Sammlung von Drittanbieterprojekten, die Material-UI erweitern.
 
 ### Carousel
 
-- [material-auto-rotating-carousel](https://mui.wertarbyte.com/#material-auto-rotating-carousel): Neue Benutzer in Ihre App einführen.
+- [mui-rff](https://github.com/lookfirst/mui-rff) Bindings for using Material-UI with [React Final Form](https://final-form.org/react).
 
 ### Image
 
