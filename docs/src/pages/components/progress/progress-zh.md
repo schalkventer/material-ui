@@ -81,6 +81,14 @@ function Progress(props) {
     </React.Fragment>
   );
 }
+function Progress(props) {
+  return (
+    <React.Fragment>
+      <CircularProgress variant="determinate" value={normalise(props.value)} />
+      <LinearProgress variant="determinate" value={normalise(props.value)} />
+    </React.Fragment>
+  );
+}
 ```
 
 ## 定制的进度条
