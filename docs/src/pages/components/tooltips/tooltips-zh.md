@@ -99,6 +99,11 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
       {'A disabled button'}
     </button>
   </span>
+</Tooltip> { pointerEvents: 'none' } : {}}
+    >
+      {'A disabled button'}
+    </button>
+  </span>
 </Tooltip>
 ```
 
