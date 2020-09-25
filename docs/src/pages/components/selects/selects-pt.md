@@ -62,7 +62,7 @@ O primeiro passo é estilizar o componente `InputBase`. Uma vez estilizado, voc�
 
 ## Seleção Aberta Controlada
 
-O componente `Select` pode lidar com múltiplas seleções. O componente `Select` pode lidar com várias seleções.
+O componente `Select` pode lidar com múltiplas seleções. O componente `Select` pode lidar com múltiplas seleções.
 
 Como na seleção única, você pode extrair o novo valor acessando `event.target.value` na chamada `onChange`. É sempre uma matriz.
 
