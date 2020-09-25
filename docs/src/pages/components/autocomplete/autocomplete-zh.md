@@ -30,11 +30,12 @@ packageName: '@material-ui/lab'
 默认情况下，该组件接受和以下结构相同的选项：
 
 ```ts
-interface AutocompleteOption {
-  label: string;
-}
-// 或者
-type AutocompleteOption = string;
+const filterOptions = createFilterOptions({
+  matchFrom: 'start',
+  stringify: option => option.title,
+});
+
+<Autocomplete filterOptions={filterOptions} />
 ```
 
 从248个国家中选择一个。
